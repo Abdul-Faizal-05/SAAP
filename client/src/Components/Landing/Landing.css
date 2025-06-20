@@ -1,74 +1,78 @@
 .landing {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  font-family: 'Segoe UI', sans-serif;
-  background: #f3f4f6;
-  color: #333;
-  padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to bottom right, #eef2f3, #8e9eab);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .landing-header {
-  text-align: center;
-  padding: 50px 20px;
-  background: linear-gradient(to right, #4f46e5, #3b82f6);
-  color: white;
-  border-radius: 12px;
-  width: 100%;
-  max-width: 800px;
-  margin-bottom: 30px;
+    margin-top: 3rem;
 }
 
-.landing-header h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+.landing-title {
+    font-size: 3rem;
+    color: #1f2937;
 }
 
-.landing-header p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+.landing-title span {
+    color: #3b82f6;
+}
+
+.landing-subtitle {
+    font-size: 1.25rem;
+    margin: 1rem 0 2rem;
+    color: #374151;
 }
 
 .start-btn {
-  padding: 12px 30px;
-  font-size: 1rem;
-  background-color: #fff;
-  color: #3b82f6;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .start-btn:hover {
-  background-color: #e0e7ff;
+    background-color: #2563eb;
 }
 
 .landing-info {
-  text-align: center;
-  max-width: 600px;
-  margin-top: 20px;
+    margin-top: 4rem;
 }
 
-.landing-info h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
 }
 
-.landing-info ul {
-  list-style: none;
-  padding: 0;
+.feature-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
 }
 
-.landing-info li {
-  font-size: 1.1rem;
-  margin: 10px 0;
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card span {
+    font-size: 2rem;
 }
 
 .landing-footer {
-  margin-top: auto;
-  padding: 20px 0;
-  font-size: 0.9rem;
-  color: #777;
+    margin-top: 3rem;
+    padding: 1rem 0;
+    background-color: #f3f4f6;
+    color: #6b7280;
 }
