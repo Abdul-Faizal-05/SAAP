@@ -14,15 +14,17 @@ function Register() {
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        // await axios.post('http://localhoat:5000/register',formData);
-        // if(res===200){
-        //     alert('Registered successfully');
-        // }
+      const res = await axios.post('http://localhost:5000/register', formData);
+      if (res.status === 200) { 
+        setFormData({name:'',dob:'',email:'',password:''});
+        alert('Registered successfully');
+      }
     } catch (error) {
-        console.log(error);
+      console.error("Registration failed:", error);
+      alert("Registration failed. Please try again.");
     }
   };
 
