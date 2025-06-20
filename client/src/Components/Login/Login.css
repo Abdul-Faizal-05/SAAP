@@ -1,6 +1,5 @@
 /* -------- Layout --------------------------------------------------- */
-.register-wrapper {
-  /* Acts as the page container */
+.login-wrapper {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -9,30 +8,27 @@
   padding: 1rem;
   overflow: auto;
 
-  /* Base font for everything inside */
   font-family: "Inter", system-ui, sans-serif;
 }
 
-.register-card {
-  /* Local reset / sizing */
-  box-sizing: border-box;
-
+.login-card {
   width: 100%;
-  max-width: 420px;
+  max-width: 400px;
   background: #ffffff;
   padding: 2.5rem 2rem;
   border-radius: 1rem;
   box-shadow: 0 25px 50px -12px rgba(31, 41, 55, 0.15);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-sizing: border-box;
 }
 
-.register-card:hover {
+.login-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 30px 60px -15px rgba(31, 41, 55, 0.2);
 }
 
-.register-card h2 {
-  margin: 0 0 1.75rem;           /* manual margin reset */
+.login-card h2 {
+  margin: 0 0 1.75rem;
   font-weight: 600;
   text-align: center;
   color: #1f2937;
@@ -46,13 +42,13 @@
 }
 
 .input-group input {
-  box-sizing: border-box;
   width: 100%;
-  padding: 0.75rem 0.75rem 0.75rem 2.75rem;  /* space for icon */
+  padding: 0.75rem 0.75rem 0.75rem 2.75rem;
   border: 1px solid #d1d5db;
   border-radius: 0.5rem;
   font-size: 0.95rem;
   transition: border 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
 }
 
 .input-group input:focus {
@@ -71,7 +67,27 @@
   box-sizing: border-box;
 }
 
-.already-registered {
+/* -------- Forgot Password & Register -------------------------------- */
+.forgot-password {
+  text-align: right;
+  margin: 0 0 1rem;
+  font-weight: 300;
+  box-sizing: border-box;
+}
+
+.forgot-password a {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #063d95;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.forgot-password a:hover {
+  color: #031231;
+}
+
+.not-registered {
   margin-top: 1.25rem;
   text-align: center;
   font-size: 0.9rem;
@@ -79,20 +95,19 @@
   box-sizing: border-box;
 }
 
-.already-registered a {
+.not-registered a {
   color: #3b82f6;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s;
 }
 
-.already-registered a:hover {
+.not-registered a:hover {
   color: #2563eb;
 }
 
 /* -------- Button --------------------------------------------------- */
 .btn-primary {
-  box-sizing: border-box;
   width: 100%;
   padding: 0.8rem;
   margin-top: 0.25rem;
@@ -104,6 +119,7 @@
   font-size: 1rem;
   cursor: pointer;
   transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
 }
 
 .btn-primary:hover {
@@ -116,9 +132,9 @@
   transform: translateY(0);
 }
 
-/* -------- Small screens -------------------------------------------- */
+/* -------- Responsive ------------------------------------------------ */
 @media (max-width: 480px) {
-  .register-card {
+  .login-card {
     padding: 2rem 1.25rem;
   }
 }

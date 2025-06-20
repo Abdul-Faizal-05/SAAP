@@ -78,16 +78,12 @@ function Register() {
           />
         </div>
 
-        <div className="forgot-password">
-          <a href="#">Forgot Password?</a>
-        </div>
-
         <button className="btn-primary" type="submit">
           Register
         </button>
 
         <div className="already-registered">
-          Already registered? <a href="#">Login here</a>
+          Already registered? <a href="/login">Login here</a>
         </div>
       </form>
     </div>
