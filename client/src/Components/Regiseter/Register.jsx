@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from 'axios';
 import { User, Calendar, Mail, Lock } from "lucide-react";
 import "./Register.css";
 
@@ -13,10 +14,16 @@ function Register() {
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    // 🔒 TODO: send formData to your backend / Firebase
-    console.table(formData);
+    try {
+        // await axios.post('http://localhoat:5000/register',formData);
+        // if(res===200){
+        //     alert('Registered successfully');
+        // }
+    } catch (error) {
+        console.log(error);
+    }
   };
 
   return (
@@ -24,7 +31,6 @@ function Register() {
       <form className="register-card" onSubmit={handleSubmit}>
         <h2>Create Account</h2>
 
-        {/* Name */}
         <div className="input-group">
           <User className="input-icon" size={18} />
           <input
@@ -37,20 +43,17 @@ function Register() {
           />
         </div>
 
-        {/* DOB */}
         <div className="input-group">
           <Calendar className="input-icon" size={18} />
           <input
             type="date"
             name="dob"
-            placeholder="Date of Birth"
             value={formData.dob}
             onChange={handleChange}
             required
           />
         </div>
 
-        {/* Email */}
         <div className="input-group">
           <Mail className="input-icon" size={18} />
           <input
@@ -63,7 +66,6 @@ function Register() {
           />
         </div>
 
-        {/* Password */}
         <div className="input-group">
           <Lock className="input-icon" size={18} />
           <input
@@ -76,10 +78,17 @@ function Register() {
           />
         </div>
 
-        {/* Submit */}
+        <div className="forgot-password">
+          <a href="#">Forgot Password?</a>
+        </div>
+
         <button className="btn-primary" type="submit">
           Register
         </button>
+
+        <div className="already-registered">
+          Already registered? <a href="#">Login here</a>
+        </div>
       </form>
     </div>
   );
