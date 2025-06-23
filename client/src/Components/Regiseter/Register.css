@@ -1,0 +1,124 @@
+/* -------- Layout --------------------------------------------------- */
+.register-wrapper {
+  /* Acts as the page container */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f6fa;
+  padding: 1rem;
+  overflow: auto;
+
+  /* Base font for everything inside */
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.register-card {
+  /* Local reset / sizing */
+  box-sizing: border-box;
+
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(31, 41, 55, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.register-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 60px -15px rgba(31, 41, 55, 0.2);
+}
+
+.register-card h2 {
+  margin: 0 0 1.75rem;           /* manual margin reset */
+  font-weight: 600;
+  text-align: center;
+  color: #1f2937;
+}
+
+/* -------- Inputs --------------------------------------------------- */
+.input-group {
+  position: relative;
+  margin-bottom: 1.25rem;
+  box-sizing: border-box;
+}
+
+.input-group input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 2.75rem;  /* space for icon */
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+.input-icon {
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.already-registered {
+  margin-top: 1.25rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #4b5563;
+  box-sizing: border-box;
+}
+
+.already-registered a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.already-registered a:hover {
+  color: #2563eb;
+}
+
+/* -------- Button --------------------------------------------------- */
+.btn-primary {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.25rem;
+  background: #3b82f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px -5px rgba(37, 99, 235, 0.45);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* -------- Small screens -------------------------------------------- */
+@media (max-width: 480px) {
+  .register-card {
+    padding: 2rem 1.25rem;
+  }
+}
