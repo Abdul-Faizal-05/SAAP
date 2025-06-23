@@ -1,26 +1,26 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const {Pool} = require('pg')
-
+const {database} = require('./db')
+const {roleAuth} = require('./middleware/roleAuth'); // Fixed import
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-const database = new Pool({
-    user: process.env.db_username,
-    host: process.env.db_host,
-    database: process.env.db_database,
-    password: process.env.db_password,
-    port: process.env.db_port
-});
 
-app.post('/register',async(req,res)=>{
+app.post('/register',roleAuth,async(req,res)=>{
     const {name,dob,email,password} = req.body;
-    console.log(name,dob,email,password);
-    res.status(200).json({message:"Data received successfully"})
+
+
+    const response= await database.query(
+        'INSERT INTO users(name, dob, email, password,role) VALUES ($1, $2, $3, $4,$5) returning *',
+        [name, dob, email, password,req.role]
+    );
+    
+    res.status(200).json({"Data sent:": response.rows[0]});
 })
+
 
 database.connect()
   .then(() => {
