@@ -13,7 +13,7 @@ function Landing() {
         <div className="landing">
             <header className="landing-header">
                 <h1 className="landing-title">Welcome to <span>Classroom Meets</span></h1>
-                <p className="landing-subtitle">Your virtual classroom for smarter learning and collaboration</p>
+                <p className="landing-subtitle">Your virtual classroom for smarter learning and collaboration.</p>
                 <button className="start-btn" onClick={handleStart}>Join Now</button>
             </header>
 
