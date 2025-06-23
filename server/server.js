@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const {database} = require('./db')
-const {roleAuth} = require('./middleware/roleAuth'); // Fixed import
+const {roleAuth} = require('./middleware/roleAuth'); 
 const app = express();
 
 app.use(cors());
@@ -33,3 +33,5 @@ database.connect()
     console.error('Database connection error:', err);
     process.exit(1);
   });
+
+  
